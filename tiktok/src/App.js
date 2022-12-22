@@ -1,11 +1,13 @@
 
-
-import UseStateRandomGift from './useStateGift'
+import { useState } from 'react';
+import UseEffectOverview from './useEffectOverview'
 
 function App() {
+  const [state, setstate] = useState(false);
   return (
     <div>
-      <UseStateRandomGift />
+      <button onClick={()=>setstate(!state)}>Toggle me</button>
+      {state && <UseEffectOverview />}
     </div>
   );
 }
