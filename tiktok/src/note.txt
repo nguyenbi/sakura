@@ -1,4 +1,5 @@
 memo: HOC higher order component
 memo: su dung de khong phai render lai
 Hook: gan vao component
+      useCallback
 Props
