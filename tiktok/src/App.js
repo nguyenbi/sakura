@@ -1,13 +1,15 @@
 
 import { useState } from 'react';
-import UseLayoutEffectDemo from './useLayoutEffectOverview'
+import UseRefOverview from './UseRefOverview'
+import { MemoTemp } from './MemoContent';
 
 function App() {
   const [state, setstate] = useState(false);
   return (
     <div>
-      <button onClick={()=>setstate(!state)}>Toggle me</button>
-      {state && <UseLayoutEffectDemo />}
+      <button onClick={() => setstate(!state)}>Toggle me</button>
+      {state && <UseRefOverview />}
+      <MemoTemp stateParam = {state}/>
     </div>
   );
 }
