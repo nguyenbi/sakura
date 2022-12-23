@@ -1,15 +1,18 @@
 
-import { useState } from 'react';
-import UseRefOverview from './UseRefOverview'
-import { MemoTemp } from './MemoContent';
+import { useCallback, useState } from 'react';
+import Content from './UseCallbackAndMemo';
 
 function App() {
-  const [state, setstate] = useState(false);
+  const [count, setcount] = useState(0);
+  const handelIncrease = useCallback(
+    () => {
+      setcount(count => count + 1)
+    },[]
+  ) 
   return (
-    <div>
-      <button onClick={() => setstate(!state)}>Toggle me</button>
-      {state && <UseRefOverview />}
-      <MemoTemp stateParam = {state}/>
+    <div style={{ padding: 20 }}>
+      <Content onIncrease = {handelIncrease}/>
+      <h1>{count}</h1>
     </div>
   );
 }
