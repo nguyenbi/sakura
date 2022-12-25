@@ -1,20 +1,12 @@
 
-import { useCallback, useState } from 'react';
-import Content from './UseCallbackAndMemo';
+import UseContextDemo from "./UseContext";
 
 function App() {
-  const [count, setcount] = useState(0);
-  const handelIncrease = useCallback(
-    () => {
-      setcount(count => count + 1)
-    },[]
-  ) 
   return (
-    <div style={{ padding: 20 }}>
-      <Content onIncrease = {handelIncrease}/>
-      <h1>{count}</h1>
+    <div>
+      <UseContextDemo />
     </div>
-  );
+  )
 }
 
 export default App;
